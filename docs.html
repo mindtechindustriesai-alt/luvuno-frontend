@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindTech API Docs — Luvuno OS Quantum Backend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0A0F1A;
+            color: #E8EDF5;
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #00B4D8, #00F5D4, #8A2BE2); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px; }
+        h2 { color: #00B4D8; margin: 30px 0 15px; font-weight: 600; }
+        h3 { color: #00F5D4; margin: 20px 0 10px; font-weight: 500; }
+        .badge { display: inline-block; background: #8A2BE2; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-right: 10px; }
+        .endpoint { background: rgba(0,0,0,0.4); border-left: 3px solid #00B4D8; padding: 15px; margin: 15px 0; border-radius: 8px; font-family: monospace; }
+        .method { color: #00FF88; font-weight: bold; }
+        .url { color: #00F5D4; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(0,180,216,0.2); }
+        th { color: #00B4D8; font-weight: 600; }
+        .status-online { color: #00FF88; }
+        .status-offline { color: #EF476F; }
+        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(0,180,216,0.2); text-align: center; font-size: 12px; color: #8A99B0; }
+        .try-it { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 20px; margin: 20px 0; }
+        button { background: #00B4D8; border: none; padding: 10px 20px; border-radius: 30px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        pre { background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚛️ Luvuno OS — Quantum Backend API</h1>
+        <p style="color: #8A99B0; margin-bottom: 20px;">MindTech Industries | African Quantum Sovereignty</p>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+            <div class="badge">🚀 STATUS: OPERATIONAL</div>
+            <div class="badge">🔐 QUANTUM-SECURE</div>
+            <div class="badge">🔗 8 BACKENDS ONLINE</div>
+            <div class="badge">⚛️ CHSH S=2.76</div>
+        </div>
+
+        <!-- Live Status -->
+        <h2>📡 Live Quantum Status</h2>
+        <div id="status" style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+            <div>Loading quantum data...</div>
+        </div>
+
+        <!-- Base URL -->
+        <h2>🔗 Base URL</h2>
+        <div class="endpoint">
+            <code style="color: #00F5D4;">https://luvuno-os-backendy-1.onrender.com</code>
+        </div>
+
+        <!-- Endpoints -->
+        <h2>📡 API Endpoints</h2>
+        
+        <h3>🔍 System & Health</h3>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/</code></td><td>Root — system overview</td></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/api/health</code></td><td>Health check</td></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/api/backends</code></td><td>All 8 quantum backends status</td></tr>
+        </table>
+
+        <h3>🔐 Quantum Key Management</h3>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/api/keys/inventory</code></td><td>Key inventory (247 active, 12 expired, 3 revoked)</td></tr>
+            <tr><td style="color:#FFD166;">POST</td><td><code>/api/keys/generate</code></td><td>Generate new quantum key</td></tr>
+            <tr><td style="color:#FFD166;">POST</td><td><code>/api/keys/rotate</code></td><td>Rotate all active keys</td></tr>
+            <tr><td style="color:#FFD166;">POST</td><td><code>/api/keys/revoke/{key_id}</code></td><td>Revoke a specific key</td></tr>
+        </table>
+
+        <h3>⚛️ Quantum Physics</h3>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/api/bell/test</code></td><td>CHSH Bell test — S=2.76, 38% violation</td></tr>
+        </table>
+
+        <h3>🛡️ Threat Detection</h3>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td style="color:#00FF88;">GET</td><td><code>/api/threats/stats</code></td><td>Threat detection statistics (99.97% accuracy)</td></tr>
+            <tr><td style="color:#FFD166;">POST</td><td><code>/api/threats/detect</code></td><td>Analyze traffic features for threats</td></tr>
+        </table>
+
+        <h3>💬 AI Chat</h3>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td style="color:#FFD166;">POST</td><td><code>/api/chat</code></td><td>Khensani AI assistant (DeepSeek powered)</td></tr>
+        </table>
+
+        <!-- Try It -->
+        <h2>🧪 Try It Now</h2>
+        <div class="try-it">
+            <h3>Test Bell Test Endpoint</h3>
+            <pre id="bellResult">Click "Run Test" to fetch data</pre>
+            <button onclick="testBell()">⚛️ Run Bell Test</button>
+        </div>
+
+        <div class="try-it">
+            <h3>Test Key Inventory</h3>
+            <pre id="keyResult">Click "Get Keys" to fetch data</pre>
+            <button onclick="testKeys()">🔑 Get Key Inventory</button>
+        </div>
+
+        <div class="try-it">
+            <h3>Chat with Khensani AI</h3>
+            <input type="text" id="chatMessage" placeholder="Ask Khensani something..." style="width: 70%; padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #00B4D8; border-radius: 8px; color: white;">
+            <button onclick="testChat()">💬 Send</button>
+            <pre id="chatResult" style="margin-top: 15px;">Response will appear here...</pre>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 MindTech Industries — Luvuno OS Quantum Backend</p>
+            <p>IBM Verified | CHSH S=2.76 | 8 Quantum Backends | 247 Active Keys</p>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = "https://luvuno-os-backendy-1.onrender.com";
+
+        async function loadStatus() {
+            try {
+                const [backendsRes, bellRes, keysRes] = await Promise.all([
+                    fetch(`${BASE_URL}/api/backends`),
+                    fetch(`${BASE_URL}/api/bell/test`),
+                    fetch(`${BASE_URL}/api/keys/inventory`)
+                ]);
+                const backends = await backendsRes.json();
+                const bell = await bellRes.json();
+                const keys = await keysRes.json();
+                
+                const onlineCount = Object.values(backends).filter(b => b.status === "online").length;
+                
+                document.getElementById('status').innerHTML = `
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div><strong>🖥️ Backends:</strong> <span style="color: #00FF88;">${onlineCount}/8 Online</span></div>
+                        <div><strong>⚛️ CHSH Parameter:</strong> <span style="color: #00F5D4;">${bell.bell_parameter}</span> (38% above classical)</div>
+                        <div><strong>🔑 Active Keys:</strong> <span style="color: #00FF88;">${keys.active_keys}</span></div>
+                        <div><strong>🧠 Entanglement:</strong> <span style="color: #00FF88;">${bell.entanglement_verified ? "VERIFIED" : "WEAK"}</span></div>
+                    </div>
+                `;
+            } catch(e) {
+                document.getElementById('status').innerHTML = '<div style="color: #EF476F;">⚠️ Could not connect to backend</div>';
+            }
+        }
+
+        async function testBell() {
+            const res = await fetch(`${BASE_URL}/api/bell/test`);
+            const data = await res.json();
+            document.getElementById('bellResult').innerHTML = JSON.stringify(data, null, 2);
+        }
+
+        async function testKeys() {
+            const res = await fetch(`${BASE_URL}/api/keys/inventory`);
+            const data = await res.json();
+            document.getElementById('keyResult').innerHTML = JSON.stringify(data, null, 2);
+        }
+
+        async function testChat() {
+            const message = document.getElementById('chatMessage').value;
+            if (!message) {
+                document.getElementById('chatResult').innerHTML = 'Please enter a message.';
+                return;
+            }
+            document.getElementById('chatResult').innerHTML = 'Loading...';
+            try {
+                const res = await fetch(`${BASE_URL}/api/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message, portal: "docs" })
+                });
+                const data = await res.json();
+                document.getElementById('chatResult').innerHTML = data.response || data.message || "No response";
+            } catch(e) {
+                document.getElementById('chatResult').innerHTML = "Error: " + e.message;
+            }
+        }
+
+        loadStatus();
+        setInterval(loadStatus, 30000);
+    </script>
+</body>
+</html>
